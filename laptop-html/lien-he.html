@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ & Bản Đồ Showroom - KTSHOP</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
+            <a href="index.html" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 bg-gradient-to-tr from-blue-700 to-indigo-500 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-black text-blue-700">KT<span class="text-slate-900">SHOP</span></div>
+                    <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Laptop & Hi-Tech</div>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition">Trang chủ</a>
+                <a href="san-pham.html" class="hover:text-blue-600 transition">Sản phẩm</a>
+                <a href="gioi-thieu.html" class="hover:text-blue-600 transition">Giới thiệu</a>
+                <a href="lien-he.html" class="text-blue-600 font-bold">Liên hệ</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="gio-hang.html" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold transition flex items-center gap-2">
+                    <i class="fa-solid fa-cart-shopping text-blue-600"></i> Giỏ hàng (2)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-10 flex-1 w-full space-y-8">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+            <h1 class="text-3xl font-black text-slate-900">Liên Hệ Với KTSHOP</h1>
+            <p class="text-xs text-slate-500">Chúng tôi luôn sẵn sàng lắng nghe và tư vấn miễn phí cho bạn 24/7</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- CONTACT FORM (7 cols) -->
+            <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-5">
+                <h3 class="text-base font-bold text-slate-900 border-b border-slate-100 pb-3">Gửi Thắc Mắc & Góp Ý</h3>
+                <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi liên hệ! Nhân viên tư vấn sẽ liên hệ lại với bạn trong ít phút.'); this.reset();" class="space-y-4 text-xs">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Họ tên của bạn *</label>
+                            <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Số điện thoại *</label>
+                            <input type="tel" required placeholder="0988xxxxxx" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Địa chỉ Email *</label>
+                        <input type="email" required placeholder="email@gmail.com" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Chủ đề cần tư vấn</label>
+                        <select class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600 bg-white">
+                            <option>Tư vấn chọn mua laptop phù hợp</option>
+                            <option>Hỏi về chính sách bảo hành & kỹ thuật</option>
+                            <option>Hỗ trợ thủ tục trả góp 0%</option>
+                            <option>Hợp tác kinh doanh & dự án trường học</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Nội dung chi tiết *</label>
+                        <textarea rows="4" required placeholder="Nhập câu hỏi hoặc nội dung bạn cần hỗ trợ..." class="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:outline-none focus:border-blue-600"></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition shadow text-xs">
+                        GỬI TIN NHẮN NGAY
+                    </button>
+                </form>
+            </div>
+
+            <!-- INFO & MAP (5 cols) -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 text-xs">
+                    <h3 class="text-base font-bold text-slate-900 border-b border-slate-100 pb-3">Trụ Sở Chính KTSHOP</h3>
+                    <div class="space-y-3 text-slate-600">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-red-500 text-base mt-0.5"></i>
+                            <div>
+                                <strong class="text-slate-800 block">Địa chỉ:</strong>
+                                123 Đường 3/2, Phường 11, Quận 10, TP. Hồ Chí Minh
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-blue-500 text-base mt-0.5"></i>
+                            <div>
+                                <strong class="text-slate-800 block">Tổng đài CSKH:</strong>
+                                1800 6868 (Miễn phí từ 8:00 - 21:30 hàng ngày)
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-amber-500 text-base mt-0.5"></i>
+                            <div>
+                                <strong class="text-slate-800 block">Email hỗ trợ:</strong>
+                                support@ktshop.vn - ketoan@ktshop.vn
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GOOGLE MAP PLACEHOLDER -->
+                <div class="bg-slate-200 rounded-3xl overflow-hidden h-64 border border-slate-300 relative shadow-inner flex items-center justify-center">
+                    <div class="text-center p-4">
+                        <i class="fa-solid fa-map-location-dot text-4xl text-slate-400 mb-2"></i>
+                        <div class="text-xs font-bold text-slate-700">Bản đồ vị trí KTSHOP Laptop</div>
+                        <div class="text-[11px] text-slate-500">Quận 10, Thành phố Hồ Chí Minh</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 text-center">
+        <p>© 2026 KTSHOP Laptop. Dự án chuyên đề Frontend - Huỳnh Tấn Phát (501250508).</p>
+    </footer>
+</body>
+</html>

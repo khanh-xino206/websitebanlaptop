@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản - KTSHOP</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+
+    <header class="py-6 px-4 max-w-7xl mx-auto w-full flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2.5">
+            <div class="w-10 h-10 bg-gradient-to-tr from-blue-700 to-indigo-500 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="text-2xl font-black text-blue-700">KT<span class="text-slate-900">SHOP</span></div>
+        </a>
+        <a href="index.html" class="text-xs text-slate-500 hover:text-blue-600 flex items-center gap-1 font-medium">
+            <i class="fa-solid fa-house"></i> Về trang chủ
+        </a>
+    </header>
+
+    <main class="flex-1 flex items-center justify-center px-4 py-8">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200/80 max-w-md w-full space-y-6">
+            <div class="text-center space-y-1">
+                <h1 class="text-2xl font-black text-slate-900">Tạo Tài Khoản Mới</h1>
+                <p class="text-xs text-slate-500">Đăng ký thành viên để nhận voucher 500k và tích điểm</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Đăng ký tài khoản thành công! Mời bạn đăng nhập.'); window.location.href='dang-nhap.html';" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Họ và tên của bạn *</label>
+                    <input type="text" required placeholder="Huỳnh Tấn Phát" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:border-blue-600 transition">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Số điện thoại *</label>
+                    <input type="tel" required placeholder="0988xxxxxx" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:border-blue-600 transition">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Địa chỉ Email *</label>
+                    <input type="email" required placeholder="nhapemail@gmail.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:border-blue-600 transition">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Mật khẩu *</label>
+                    <input type="password" required placeholder="Tối thiểu 6 ký tự" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:border-blue-600 transition">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Xác nhận lại mật khẩu *</label>
+                    <input type="password" required placeholder="Nhập lại mật khẩu trên" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:border-blue-600 transition">
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="terms" required checked class="rounded text-blue-600 focus:ring-0">
+                    <label for="terms" class="text-slate-600 cursor-pointer">Tôi đồng ý với Quy chế hoạt động & Chính sách bảo mật của KTSHOP</label>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md transition text-sm">
+                    TẠO TÀI KHOẢN NGAY
+                </button>
+            </form>
+
+            <div class="text-center text-xs text-slate-500 border-t border-slate-100 pt-4">
+                Đã có tài khoản? 
+                <a href="dang-nhap.html" class="text-blue-600 font-bold hover:underline">Đăng nhập tại đây</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 text-center text-xs text-slate-400">
+        © 2026 KTSHOP Laptop. Dự án chuyên đề Frontend - Huỳnh Tấn Phát (501250508).
+    </footer>
+</body>
+</html>

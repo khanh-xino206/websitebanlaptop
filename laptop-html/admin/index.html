@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - KTSHOP Laptop</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans flex min-h-screen">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-slate-900 text-slate-300 flex flex-col flex-shrink-0">
+        <!-- Logo -->
+        <div class="p-5 border-b border-slate-800 flex items-center gap-3">
+            <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white text-lg font-black">KT</div>
+            <div>
+                <div class="font-extrabold text-white text-base tracking-tight leading-none">KTSHOP ADMIN</div>
+                <div class="text-[10px] text-slate-400 mt-1">Hệ Thống Quản Trị</div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="flex-1 p-4 space-y-1.5 text-xs font-semibold">
+            <div class="text-[10px] text-slate-500 uppercase tracking-wider px-3 mb-2 font-bold">Tổng quan</div>
+            <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 bg-blue-600 text-white rounded-xl shadow-sm">
+                <i class="fa-solid fa-gauge w-4 text-center"></i>
+                <span>Bảng điều khiển (Dashboard)</span>
+            </a>
+
+            <div class="text-[10px] text-slate-500 uppercase tracking-wider px-3 mt-6 mb-2 font-bold">Quản lý bán hàng</div>
+            <a href="danh-sach-san-pham.html" class="flex items-center gap-3 px-3.5 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-white rounded-xl transition">
+                <i class="fa-solid fa-laptop w-4 text-center text-blue-400"></i>
+                <span>Danh sách Laptop</span>
+            </a>
+            <a href="them-san-pham.html" class="flex items-center gap-3 px-3.5 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-white rounded-xl transition">
+                <i class="fa-solid fa-plus-circle w-4 text-center text-green-400"></i>
+                <span>Thêm Laptop mới</span>
+            </a>
+            <a href="danh-sach-don-hang.html" class="flex items-center gap-3 px-3.5 py-2.5 hover:bg-slate-800 text-slate-300 hover:text-white rounded-xl transition">
+                <i class="fa-solid fa-file-invoice-dollar w-4 text-center text-amber-400"></i>
+                <span>Quản lý đơn hàng</span>
+                <span class="ml-auto bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">5 mới</span>
+            </a>
+
+            <div class="text-[10px] text-slate-500 uppercase tracking-wider px-3 mt-6 mb-2 font-bold">Hệ thống</div>
+            <a href="../index.html" target="_blank" class="flex items-center gap-3 px-3.5 py-2.5 hover:bg-slate-800 text-yellow-400 rounded-xl transition">
+                <i class="fa-solid fa-arrow-up-right-from-square w-4 text-center"></i>
+                <span>Xem Website Khách</span>
+            </a>
+        </nav>
+
+        <!-- Admin user footer -->
+        <div class="p-4 border-t border-slate-800 flex items-center gap-3">
+            <div class="w-9 h-9 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-xs">AD</div>
+            <div class="flex-1 overflow-hidden">
+                <div class="font-bold text-xs text-white truncate">Huỳnh Tấn Phát</div>
+                <div class="text-[10px] text-slate-400 truncate">Quản trị viên tối cao</div>
+            </div>
+            <a href="../dang-nhap.html" class="text-slate-400 hover:text-red-400 transition" title="Đăng xuất"><i class="fa-solid fa-right-from-bracket text-xs"></i></a>
+        </div>
+    </aside>
+
+    <!-- CONTENT AREA -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+        <!-- Top bar -->
+        <header class="bg-white border-b border-slate-200 py-3.5 px-6 flex items-center justify-between">
+            <h1 class="text-lg font-black text-slate-800">Tổng Quan Kinh Doanh KTSHOP</h1>
+            <div class="flex items-center gap-4 text-xs">
+                <div class="text-slate-500"><i class="fa-regular fa-clock mr-1"></i> 28/10/2026 - 15:30</div>
+                <a href="../index.html" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-semibold transition">
+                    <i class="fa-solid fa-globe mr-1"></i> Ra Web
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <main class="p-6 space-y-6">
+
+            <!-- STATS CARDS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Card 1 -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Doanh thu tháng</div>
+                        <div class="text-2xl font-black text-slate-900 mt-1">486.200.000₫</div>
+                        <div class="text-xs text-green-600 font-bold mt-1 flex items-center gap-1">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +18.4% so với tháng trước
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Đơn hàng mới</div>
+                        <div class="text-2xl font-black text-slate-900 mt-1">32 đơn</div>
+                        <div class="text-xs text-green-600 font-bold mt-1 flex items-center gap-1">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +5 đơn hôm nay
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Tổng Laptop Trong Kho</div>
+                        <div class="text-2xl font-black text-slate-900 mt-1">128 máy</div>
+                        <div class="text-xs text-slate-500 font-semibold mt-1">
+                            6 thương hiệu chính hãng
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Khách hàng thành viên</div>
+                        <div class="text-2xl font-black text-slate-900 mt-1">1.450</div>
+                        <div class="text-xs text-green-600 font-bold mt-1 flex items-center gap-1">
+                            <i class="fa-solid fa-user-plus"></i> +28 tuần này
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECENT ORDERS TABLE -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <h3 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left text-blue-600"></i> Đơn Hàng Laptop Mới Nhất Cần Xử Lý
+                    </h3>
+                    <a href="danh-sach-don-hang.html" class="text-xs text-blue-600 font-semibold hover:underline">Xem tất cả đơn hàng →</a>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-500 border-b border-slate-100">
+                                <th class="p-3">Mã đơn</th>
+                                <th class="p-3">Khách hàng</th>
+                                <th class="p-3">Sản phẩm laptop</th>
+                                <th class="p-3">Tổng tiền</th>
+                                <th class="p-3">Thanh toán</th>
+                                <th class="p-3">Trạng thái</th>
+                                <th class="p-3 text-right">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3 font-bold text-blue-600">#KT-98520</td>
+                                <td class="p-3">
+                                    <div class="font-bold text-slate-900">Huỳnh Tấn Phát</div>
+                                    <div class="text-[11px] text-slate-400">0988123456</div>
+                                </td>
+                                <td class="p-3 font-medium">Asus ROG Strix G15 + MacBook Air M3</td>
+                                <td class="p-3 font-extrabold text-red-600">48.980.000₫</td>
+                                <td class="p-3"><span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">COD</span></td>
+                                <td class="p-3"><span class="bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full font-bold">Chờ xác nhận</span></td>
+                                <td class="p-3 text-right">
+                                    <button onclick="alert('Đã duyệt đơn #KT-98520')" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg font-semibold">Duyệt</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3 font-bold text-blue-600">#KT-98519</td>
+                                <td class="p-3">
+                                    <div class="font-bold text-slate-900">Trần Minh Quân</div>
+                                    <div class="text-[11px] text-slate-400">0912345678</div>
+                                </td>
+                                <td class="p-3 font-medium">Lenovo Legion Pro 5 16IRX9</td>
+                                <td class="p-3 font-extrabold text-red-600">36.990.000₫</td>
+                                <td class="p-3"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">VietQR</span></td>
+                                <td class="p-3"><span class="bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full font-bold">Đang giao hàng</span></td>
+                                <td class="p-3 text-right">
+                                    <button class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg font-semibold">Chi tiết</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition">
+                                <td class="p-3 font-bold text-blue-600">#KT-98518</td>
+                                <td class="p-3">
+                                    <div class="font-bold text-slate-900">Lê Thuỳ Linh</div>
+                                    <div class="text-[11px] text-slate-400">0933998877</div>
+                                </td>
+                                <td class="p-3 font-medium">Dell Inspiron 15 3520</td>
+                                <td class="p-3 font-extrabold text-red-600">14.990.000₫</td>
+                                <td class="p-3"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">Thẻ tín dụng</span></td>
+                                <td class="p-3"><span class="bg-green-100 text-green-700 px-2.5 py-1 rounded-full font-bold">Hoàn thành</span></td>
+                                <td class="p-3 text-right">
+                                    <button class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg font-semibold">In hóa đơn</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

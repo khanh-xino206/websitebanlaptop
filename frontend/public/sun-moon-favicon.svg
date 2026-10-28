@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <!-- Sun Gradient -->
+    <linearGradient id="smSunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="60%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <!-- Moon Gradient -->
+    <linearGradient id="smMoonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="60%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <filter id="smGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <clipPath id="leftHalfClip">
+      <rect x="0" y="0" width="32" height="64" />
+    </clipPath>
+    <clipPath id="rightHalfClip">
+      <rect x="32" y="0" width="32" height="64" />
+    </clipPath>
+  </defs>
+
+  <!-- Left: Sun Rays (Only on left side) -->
+  <g stroke="url(#smSunGrad)" stroke-width="3.5" stroke-linecap="round">
+    <line x1="12" y1="32" x2="5" y2="32" />
+    <line x1="17" y1="17" x2="11" y2="11" />
+    <line x1="17" y1="47" x2="11" y2="53" />
+    <line x1="28" y1="10" x2="26" y2="4" />
+    <line x1="28" y1="54" x2="26" y2="60" />
+  </g>
+
+  <!-- Left Half: Sun Core -->
+  <g clip-path="url(#leftHalfClip)">
+    <circle cx="32" cy="32" r="17" fill="url(#smSunGrad)" filter="url(#smGlow)" />
+  </g>
+
+  <!-- Right Half: Crescent Moon -->
+  <g clip-path="url(#rightHalfClip)">
+    <path
+      d="M32 15C32 15 44 19 44 32C44 45 32 49 32 49C40 46 48 40 48 32C48 24 40 18 32 15Z"
+      fill="url(#smMoonGrad)"
+      filter="url(#smGlow)"
+    />
+    <!-- Sparkle Stars on Moon Side -->
+    <path d="M51 18 C51 20 52 21 54 21 C52 21 51 22 51 24 C51 22 50 21 48 21 C50 21 51 20 51 18 Z" fill="#ffffff" />
+    <path d="M53 42 C53 43.5 53.8 44 55 44 C53.8 44 53 44.5 53 46 C53 44.5 52.2 44 51 44 C52.2 44 53 43.5 53 42 Z" fill="#ffffff" opacity="0.85" />
+  </g>
+
+  <!-- Central Fusion Divider Line -->
+  <line x1="32" y1="14" x2="32" y2="50" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" />
+</svg>

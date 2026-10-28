@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <!-- Moon Gradient -->
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#bae6fd" />
+    </linearGradient>
+    <!-- Soft Glow Filter -->
+    <filter id="moonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow Behind Moon -->
+  <path
+    d="M34 10C21.85 10 12 19.85 12 32s9.85 22 22 22c6.2 0 11.8-2.57 15.82-6.7-10.4 1.1-20.2-6.5-20.2-17.3 0-8.9 6.5-16.3 15.3-17.85C41.7 10.75 37.95 10 34 10z"
+    fill="#818cf8"
+    opacity="0.3"
+    filter="url(#moonGlow)"
+  />
+
+  <!-- Crescent Moon Body -->
+  <path
+    d="M34 10C21.85 10 12 19.85 12 32s9.85 22 22 22c6.2 0 11.8-2.57 15.82-6.7-10.4 1.1-20.2-6.5-20.2-17.3 0-8.9 6.5-16.3 15.3-17.85C41.7 10.75 37.95 10 34 10z"
+    fill="url(#moonGrad)"
+    filter="url(#moonGlow)"
+  />
+
+  <!-- Moon Edge Highlight -->
+  <path
+    d="M14 32C14 21.5 22.5 13 33 11.5C23.5 13.5 16.5 21.8 16.5 32C16.5 42.2 23.5 50.5 33 52.5C22.5 51 14 42.5 14 32z"
+    fill="#ffffff"
+    opacity="0.45"
+  />
+
+  <!-- Sparkling Celestial Stars -->
+  <!-- Star 1 (Top right) -->
+  <path
+    d="M48 14 C48 17.5 49.5 19 53 19 C49.5 19 48 20.5 48 24 C48 20.5 46.5 19 43 19 C46.5 19 48 17.5 48 14 Z"
+    fill="url(#starGrad)"
+    filter="url(#moonGlow)"
+  />
+
+  <!-- Star 2 (Middle right) -->
+  <path
+    d="M51 33 C51 35 52 36 54 36 C52 36 51 37 51 39 C51 37 50 36 48 36 C50 36 51 35 51 33 Z"
+    fill="url(#starGrad)"
+    opacity="0.9"
+  />
+
+  <!-- Star 3 (Bottom) -->
+  <path
+    d="M44 44 C44 45.5 44.8 46.2 46.5 46.2 C44.8 46.2 44 47 44 48.5 C44 47 43.2 46.2 41.5 46.2 C43.2 46.2 44 45.5 44 44 Z"
+    fill="url(#starGrad)"
+    opacity="0.8"
+  />
+</svg>

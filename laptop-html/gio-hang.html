@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng Của Bạn - KTSHOP</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 py-3.5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 bg-gradient-to-tr from-blue-700 to-indigo-500 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-black tracking-tight text-blue-700 leading-none">KT<span class="text-slate-900">SHOP</span></div>
+                    <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Giỏ Hàng & Thanh Toán</div>
+                </div>
+            </a>
+            <div class="text-xs text-slate-500 flex items-center gap-2">
+                <i class="fa-solid fa-lock text-green-600"></i>
+                <span>Giao dịch an toàn & bảo mật 100%</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full space-y-6">
+        <div class="flex items-center justify-between">
+            <h1 class="text-2xl font-black text-slate-900 flex items-center gap-2">
+                <i class="fa-solid fa-cart-shopping text-blue-600"></i> Giỏ Hàng Của Bạn (<span class="text-blue-600">2 sản phẩm</span>)
+            </h1>
+            <a href="san-pham.html" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+                <i class="fa-solid fa-chevron-left text-[10px]"></i> Tiếp tục mua hàng
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- CART ITEMS LIST (2 cols) -->
+            <div class="lg:col-span-2 space-y-4">
+                
+                <!-- Item 1 -->
+                <div id="item-1" class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center gap-4">
+                    <img src="images/asus-rog-g15-main.jpg" alt="Asus ROG" class="w-24 h-24 object-contain bg-slate-50 p-2 rounded-xl border border-slate-100 flex-shrink-0">
+                    <div class="flex-1 space-y-1 text-center sm:text-left">
+                        <span class="text-[10px] font-bold text-blue-600 uppercase">Gaming</span>
+                        <h4 class="font-bold text-sm text-slate-800">
+                            <a href="san-pham-chi-tiet.html" class="hover:text-blue-600">Asus ROG Strix G15 R7 6800H / 16GB / RTX 3050</a>
+                        </h4>
+                        <div class="text-xs text-slate-400">Mã SKU: ROG-G513RC</div>
+                        <div class="text-sm font-extrabold text-red-600">22.490.000₫</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50 text-xs">
+                            <button onclick="updateQty('qty-1', -1)" class="px-2.5 py-1.5 hover:bg-slate-200 font-bold">-</button>
+                            <input id="qty-1" type="text" value="1" readonly class="w-8 text-center font-bold bg-transparent">
+                            <button onclick="updateQty('qty-1', 1)" class="px-2.5 py-1.5 hover:bg-slate-200 font-bold">+</button>
+                        </div>
+                        <button onclick="removeItem('item-1')" class="text-slate-400 hover:text-red-600 p-2 transition" title="Xóa">
+                            <i class="fa-solid fa-trash-can text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div id="item-2" class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center gap-4">
+                    <img src="images/macbook-air-m3-main.jpg" alt="Macbook Air M3" class="w-24 h-24 object-contain bg-slate-50 p-2 rounded-xl border border-slate-100 flex-shrink-0">
+                    <div class="flex-1 space-y-1 text-center sm:text-left">
+                        <span class="text-[10px] font-bold text-blue-600 uppercase">Apple Chính Hãng</span>
+                        <h4 class="font-bold text-sm text-slate-800">
+                            <a href="san-pham-chi-tiet.html" class="hover:text-blue-600">MacBook Air 13 inch M3 (8CPU/8GPU/16GB/256GB SSD)</a>
+                        </h4>
+                        <div class="text-xs text-slate-400">Mã SKU: MBA-M3-16G</div>
+                        <div class="text-sm font-extrabold text-red-600">26.990.000₫</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center border border-slate-200 rounded-lg overflow-hidden bg-slate-50 text-xs">
+                            <button onclick="updateQty('qty-2', -1)" class="px-2.5 py-1.5 hover:bg-slate-200 font-bold">-</button>
+                            <input id="qty-2" type="text" value="1" readonly class="w-8 text-center font-bold bg-transparent">
+                            <button onclick="updateQty('qty-2', 1)" class="px-2.5 py-1.5 hover:bg-slate-200 font-bold">+</button>
+                        </div>
+                        <button onclick="removeItem('item-2')" class="text-slate-400 hover:text-red-600 p-2 transition" title="Xóa">
+                            <i class="fa-solid fa-trash-can text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Promo Voucher code -->
+                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex gap-2">
+                    <input type="text" placeholder="Nhập mã giảm giá (Vd: KTSHOP500)" class="flex-1 px-4 py-2 border border-slate-200 rounded-xl text-xs uppercase focus:outline-none focus:border-blue-600">
+                    <button onclick="alert('Áp dụng mã KTSHOP500 thành công! Giảm 500.000₫')" class="bg-slate-800 hover:bg-black text-white px-5 py-2 rounded-xl text-xs font-bold transition">Áp dụng</button>
+                </div>
+
+            </div>
+
+            <!-- ORDER SUMMARY (1 col) -->
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="font-extrabold text-base text-slate-900 border-b border-slate-100 pb-3">Tóm Tắt Đơn Hàng</h3>
+                    
+                    <div class="text-xs space-y-2.5 text-slate-600">
+                        <div class="flex justify-between">
+                            <span>Tạm tính (2 máy):</span>
+                            <span class="font-semibold text-slate-800">49.480.000₫</span>
+                        </div>
+                        <div class="flex justify-between text-green-600 font-medium">
+                            <span>Mã giảm giá (KTSHOP500):</span>
+                            <span>- 500.000₫</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Phí giao hàng:</span>
+                            <span class="text-green-600 font-bold">Miễn phí (Toàn quốc)</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-slate-200 pt-3 flex justify-between items-baseline">
+                        <span class="text-sm font-bold text-slate-900">Tổng cộng:</span>
+                        <div class="text-right">
+                            <div class="text-2xl font-black text-red-600">48.980.000₫</div>
+                            <span class="text-[11px] text-slate-400">(Đã bao gồm VAT 10%)</span>
+                        </div>
+                    </div>
+
+                    <a href="thanh-toan.html" class="block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl text-center shadow-lg transition text-sm">
+                        TIẾN HÀNH ĐẶT HÀNG
+                    </a>
+
+                    <div class="text-[11px] text-slate-400 text-center space-y-1">
+                        <div><i class="fa-solid fa-shield-halved text-green-500 mr-1"></i> Đổi trả miễn phí 30 ngày nếu lỗi kỹ thuật</div>
+                        <div><i class="fa-solid fa-truck-fast text-blue-500 mr-1"></i> Giao hàng tận nơi siêu tốc trong 2h</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 text-center">
+        <p>© 2026 KTSHOP Laptop. Dự án chuyên đề Frontend - Huỳnh Tấn Phát (501250508).</p>
+    </footer>
+
+    <script>
+        function updateQty(id, change) {
+            const el = document.getElementById(id);
+            let val = parseInt(el.value) + change;
+            if (val >= 1) el.value = val;
+        }
+        function removeItem(id) {
+            if (confirm('Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?')) {
+                document.getElementById(id).remove();
+            }
+        }
+    </script>
+</body>
+</html>

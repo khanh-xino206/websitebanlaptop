@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTSHOP - Thế Giới Laptop Chính Hãng & Công Nghệ Hàng Đầu</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .banner-slide { display: none; }
+        .banner-slide.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+
+    <!-- TOP BAR -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <span><i class="fa-solid fa-phone text-blue-400 mr-1.5"></i> Hotline: <strong class="text-white">1800 6868</strong> (Miễn phí)</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-red-400 mr-1.5"></i> Hệ thống 45 showroom toàn quốc</span>
+                <span class="hidden lg:inline"><i class="fa-solid fa-shield-halved text-green-400 mr-1.5"></i> 100% Chính hãng - Bảo hành 12-24 tháng</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="admin/index.html" class="hover:text-blue-400 text-yellow-400 font-medium transition"><i class="fa-solid fa-gauge mr-1"></i> Trang Admin</a>
+                <span class="text-slate-600">|</span>
+                <a href="dang-nhap.html" class="hover:text-white transition"><i class="fa-regular fa-user mr-1"></i> Đăng nhập</a>
+                <a href="dang-ky.html" class="hover:text-white transition"><i class="fa-solid fa-user-plus mr-1"></i> Đăng ký</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3.5">
+            <div class="flex items-center justify-between gap-4 lg:gap-8">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2.5 flex-shrink-0 group">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-blue-700 to-indigo-500 rounded-xl flex items-center justify-center text-white text-xl shadow-md group-hover:scale-105 transition">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-black tracking-tight text-blue-700 leading-none">KT<span class="text-slate-900">SHOP</span></div>
+                        <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Laptop & Hi-Tech</div>
+                    </div>
+                </a>
+
+                <!-- Search Bar -->
+                <div class="flex-1 max-w-2xl relative hidden md:block">
+                    <form action="san-pham.html" method="GET" class="relative">
+                        <input type="text" name="q" placeholder="Bạn cần tìm laptop gì? (Ví dụ: Asus ROG, Macbook M3, Dell XPS...)" 
+                               class="w-full pl-4 pr-24 py-2.5 bg-slate-100 hover:bg-slate-50 focus:bg-white border border-slate-200 focus:border-blue-600 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 transition shadow-inner">
+                        <button type="submit" class="absolute right-1.5 top-1.5 bottom-1.5 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span>Tìm kiếm</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center gap-3 lg:gap-5">
+                    <a href="gio-hang.html" class="flex items-center gap-2.5 px-3 py-2 rounded-xl hover:bg-slate-100 transition relative">
+                        <div class="relative">
+                            <i class="fa-solid fa-cart-shopping text-xl text-blue-600"></i>
+                            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">2</span>
+                        </div>
+                        <div class="hidden lg:block text-left text-xs">
+                            <span class="text-slate-400 block leading-tight">Giỏ hàng</span>
+                            <span class="font-bold text-slate-800">48.990.000₫</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION MENU -->
+        <nav class="bg-blue-600 text-white">
+            <div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-sm">
+                <div class="flex items-center overflow-x-auto py-2.5 gap-1 md:gap-2">
+                    <a href="index.html" class="px-3.5 py-1.5 bg-blue-700 rounded-lg font-semibold flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-house"></i> Trang chủ
+                    </a>
+                    <a href="san-pham.html" class="px-3 py-1.5 hover:bg-blue-700/60 rounded-lg font-medium transition whitespace-nowrap">
+                        <i class="fa-solid fa-laptop mr-1"></i> Tất cả Laptop
+                    </a>
+                    <a href="san-pham.html?brand=Apple" class="px-3 py-1.5 hover:bg-blue-700/60 rounded-lg font-medium transition whitespace-nowrap">
+                        <i class="fa-brands fa-apple mr-1"></i> Macbook
+                    </a>
+                    <a href="san-pham.html?brand=Asus" class="px-3 py-1.5 hover:bg-blue-700/60 rounded-lg font-medium transition whitespace-nowrap">
+                        Asus ROG & Zenbook
+                    </a>
+                    <a href="san-pham.html?brand=Dell" class="px-3 py-1.5 hover:bg-blue-700/60 rounded-lg font-medium transition whitespace-nowrap">
+                        Dell XPS / Inspiron
+                    </a>
+                    <a href="san-pham.html?brand=Lenovo" class="px-3 py-1.5 hover:bg-blue-700/60 rounded-lg font-medium transition whitespace-nowrap">
+                        Lenovo Legion / ThinkPad
+                    </a>
+                    <a href="gioi-thieu.html" class="px-3 py-1.5 hover:bg-blue-700/60 rounded-lg font-medium transition whitespace-nowrap">
+                        Giới thiệu
+                    </a>
+                    <a href="lien-he.html" class="px-3 py-1.5 hover:bg-blue-700/60 rounded-lg font-medium transition whitespace-nowrap">
+                        Liên hệ
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center gap-2 text-xs text-blue-100 font-medium">
+                    <i class="fa-solid fa-truck-fast"></i> Giao siêu tốc 2h
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full space-y-8">
+
+        <!-- HERO SECTION: BANNER SLIDER & PROMO CARDS -->
+        <section class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            <!-- Main Slider (3 cols) -->
+            <div class="lg:col-span-3 relative rounded-2xl overflow-hidden shadow-lg bg-slate-900 group h-[320px] md:h-[400px]">
+                <div class="banner-slide active w-full h-full relative">
+                    <img src="images/banner1.jpg" alt="Laptop Gaming Sale" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex flex-col justify-center px-8 md:px-12 text-white">
+                        <span class="inline-block bg-red-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full w-fit mb-3">Tuần Lễ Khủng</span>
+                        <h2 class="text-3xl md:text-5xl font-black mb-2 leading-tight">LAPTOP GAMING<br><span class="text-blue-400">GIẢM ĐẾN 35%</span></h2>
+                        <p class="text-slate-300 text-sm md:text-base mb-6 max-w-md">Trang bị RTX 40-Series & CPU Intel Gen 14th siêu mạnh mẽ. Tặng trọn bộ phụ kiện 3 triệu!</p>
+                        <a href="san-pham.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold w-fit text-sm transition shadow-lg flex items-center gap-2">
+                            <span>Sắm Ngay Hôm Nay</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="banner-slide w-full h-full relative">
+                    <img src="images/banner2.jpg" alt="Macbook M3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex flex-col justify-center px-8 md:px-12 text-white">
+                        <span class="inline-block bg-blue-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full w-fit mb-3">Chính Hãng Apple</span>
+                        <h2 class="text-3xl md:text-5xl font-black mb-2 leading-tight">MACBOOK AIR M3<br><span class="text-amber-300">TRỢ GIÁ HỌC SINH</span></h2>
+                        <p class="text-slate-300 text-sm md:text-base mb-6 max-w-md">Mỏng nhẹ đỉnh cao, pin 18 giờ liên tục. Hỗ trợ trả góp 0% lãi suất.</p>
+                        <a href="san-pham.html?brand=Apple" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold w-fit text-sm transition shadow-lg flex items-center gap-2">
+                            <span>Khám Phá Ngay</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Slider Nav -->
+                <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Sub Banners (1 col) -->
+            <div class="flex flex-col gap-4">
+                <div class="relative rounded-2xl overflow-hidden shadow h-[192px] group">
+                    <img src="images/banner3.jpg" alt="Văn phòng mỏng nhẹ" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-xs font-bold text-blue-400">Ultrabook Văn Phòng</span>
+                        <h4 class="font-bold text-base leading-snug">Nhẹ Dưới 1.2kg - Pin Cả Ngày</h4>
+                        <a href="san-pham.html" class="text-xs text-slate-300 hover:text-white mt-1 inline-flex items-center gap-1">Xem ngay <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden shadow h-[192px] group">
+                    <img src="images/banner4.jpg" alt="Đồ họa kỹ thuật" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-xs font-bold text-amber-400">Workstation Chuyên Nghiệp</span>
+                        <h4 class="font-bold text-base leading-snug">Chuyên Đồ Họa 3D & AI</h4>
+                        <a href="san-pham.html" class="text-xs text-slate-300 hover:text-white mt-1 inline-flex items-center gap-1">Xem ngay <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND LOGOS CAROUSEL / GRID -->
+        <section class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Thương hiệu laptop hàng đầu</h3>
+            <div class="grid grid-cols-3 sm:grid-cols-6 gap-3">
+                <a href="san-pham.html?brand=Apple" class="flex flex-col items-center justify-center p-3 rounded-xl border border-slate-100 hover:border-blue-500 hover:shadow-md transition group">
+                    <i class="fa-brands fa-apple text-3xl text-slate-800 group-hover:scale-110 transition"></i>
+                    <span class="text-xs font-semibold text-slate-700 mt-2">Apple (Macbook)</span>
+                </a>
+                <a href="san-pham.html?brand=Dell" class="flex flex-col items-center justify-center p-3 rounded-xl border border-slate-100 hover:border-blue-500 hover:shadow-md transition group">
+                    <span class="text-2xl font-black text-blue-700 group-hover:scale-110 transition">DELL</span>
+                    <span class="text-xs font-semibold text-slate-700 mt-2">Dell</span>
+                </a>
+                <a href="san-pham.html?brand=Asus" class="flex flex-col items-center justify-center p-3 rounded-xl border border-slate-100 hover:border-blue-500 hover:shadow-md transition group">
+                    <span class="text-2xl font-black text-slate-900 tracking-wider group-hover:scale-110 transition">ASUS</span>
+                    <span class="text-xs font-semibold text-slate-700 mt-2">Asus ROG / Zenbook</span>
+                </a>
+                <a href="san-pham.html?brand=HP" class="flex flex-col items-center justify-center p-3 rounded-xl border border-slate-100 hover:border-blue-500 hover:shadow-md transition group">
+                    <span class="text-2xl font-black text-blue-600 italic group-hover:scale-110 transition">hp</span>
+                    <span class="text-xs font-semibold text-slate-700 mt-2">HP Spectre / Pavilion</span>
+                </a>
+                <a href="san-pham.html?brand=Lenovo" class="flex flex-col items-center justify-center p-3 rounded-xl border border-slate-100 hover:border-blue-500 hover:shadow-md transition group">
+                    <span class="text-xl font-bold bg-red-600 text-white px-2 py-0.5 rounded group-hover:scale-110 transition">Lenovo</span>
+                    <span class="text-xs font-semibold text-slate-700 mt-2">Legion / ThinkPad</span>
+                </a>
+                <a href="san-pham.html?brand=Acer" class="flex flex-col items-center justify-center p-3 rounded-xl border border-slate-100 hover:border-blue-500 hover:shadow-md transition group">
+                    <span class="text-2xl font-black text-green-600 group-hover:scale-110 transition">acer</span>
+                    <span class="text-xs font-semibold text-slate-700 mt-2">Nitro / Swift</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FLASH SALE / HOT DEALS -->
+        <section class="bg-gradient-to-r from-red-600 to-rose-700 rounded-2xl p-6 text-white shadow-lg">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-yellow-400 text-red-700 rounded-xl flex items-center justify-center text-xl font-black shadow animate-bounce">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black uppercase tracking-tight">Săn Deal Chớp Nhoáng</h2>
+                        <p class="text-red-100 text-xs">Giá sốc duy nhất hôm nay - Số lượng có hạn</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-bold bg-black/30 px-3.5 py-1.5 rounded-xl">
+                    <span>KẾT THÚC TRONG:</span>
+                    <span class="bg-white text-red-600 px-2 py-1 rounded font-mono">08</span> :
+                    <span class="bg-white text-red-600 px-2 py-1 rounded font-mono">35</span> :
+                    <span class="bg-white text-red-600 px-2 py-1 rounded font-mono">42</span>
+                </div>
+            </div>
+
+            <!-- Products in Flash Sale -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Product Card 1 -->
+                <div class="bg-white text-slate-800 rounded-xl overflow-hidden shadow-md flex flex-col justify-between hover:shadow-xl transition group">
+                    <div class="relative p-4 bg-slate-50 flex items-center justify-center h-48">
+                        <span class="absolute top-2.5 left-2.5 bg-red-600 text-white text-[11px] font-black px-2 py-0.5 rounded-md">-22%</span>
+                        <img src="images/asus-rog-g15-main.jpg" alt="Asus ROG Strix G15" class="max-h-40 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[11px] font-semibold text-blue-600 uppercase">Gaming cao cấp</div>
+                            <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                                <a href="san-pham-chi-tiet.html">Laptop Asus ROG Strix G15 G513RC R7 6800H / 16GB / 512GB RTX 3050</a>
+                            </h4>
+                            <div class="flex items-center gap-2 mt-2 text-xs text-slate-500">
+                                <span><i class="fa-solid fa-microchip text-slate-400"></i> R7 6800H</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-memory text-slate-400"></i> 16GB</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="text-red-600 font-extrabold text-lg">22.490.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">28.990.000₫</div>
+                            <div class="mt-3 flex gap-2">
+                                <a href="san-pham-chi-tiet.html" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg text-xs font-semibold transition">
+                                    Xem chi tiết
+                                </a>
+                                <button onclick="addToCart('Asus ROG Strix G15', 22490000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center transition">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white text-slate-800 rounded-xl overflow-hidden shadow-md flex flex-col justify-between hover:shadow-xl transition group">
+                    <div class="relative p-4 bg-slate-50 flex items-center justify-center h-48">
+                        <span class="absolute top-2.5 left-2.5 bg-red-600 text-white text-[11px] font-black px-2 py-0.5 rounded-md">-15%</span>
+                        <img src="images/macbook-air-m3-main.jpg" alt="Macbook Air M3" class="max-h-40 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[11px] font-semibold text-blue-600 uppercase">Apple Chính Hãng</div>
+                            <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                                <a href="san-pham-chi-tiet.html">Apple MacBook Air 13 inch M3 2024 (8CPU / 8GPU / 16GB / 256GB SSD)</a>
+                            </h4>
+                            <div class="flex items-center gap-2 mt-2 text-xs text-slate-500">
+                                <span><i class="fa-brands fa-apple text-slate-400"></i> Apple M3</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-feather text-slate-400"></i> 1.24kg</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="text-red-600 font-extrabold text-lg">26.990.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">31.990.000₫</div>
+                            <div class="mt-3 flex gap-2">
+                                <a href="san-pham-chi-tiet.html" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg text-xs font-semibold transition">
+                                    Xem chi tiết
+                                </a>
+                                <button onclick="addToCart('MacBook Air M3', 26990000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center transition">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white text-slate-800 rounded-xl overflow-hidden shadow-md flex flex-col justify-between hover:shadow-xl transition group">
+                    <div class="relative p-4 bg-slate-50 flex items-center justify-center h-48">
+                        <span class="absolute top-2.5 left-2.5 bg-red-600 text-white text-[11px] font-black px-2 py-0.5 rounded-md">-18%</span>
+                        <img src="images/acer-nitro-5-main.jpg" alt="Acer Nitro 5" class="max-h-40 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[11px] font-semibold text-blue-600 uppercase">Quốc Dân Gaming</div>
+                            <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                                <a href="san-pham-chi-tiet.html">Laptop Gaming Acer Nitro 5 Tiger AN515 i5 12500H / 16GB / RTX 3050</a>
+                            </h4>
+                            <div class="flex items-center gap-2 mt-2 text-xs text-slate-500">
+                                <span><i class="fa-solid fa-microchip text-slate-400"></i> Core i5</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-desktop text-slate-400"></i> 144Hz</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="text-red-600 font-extrabold text-lg">18.990.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">23.490.000₫</div>
+                            <div class="mt-3 flex gap-2">
+                                <a href="san-pham-chi-tiet.html" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg text-xs font-semibold transition">
+                                    Xem chi tiết
+                                </a>
+                                <button onclick="addToCart('Acer Nitro 5', 18990000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center transition">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white text-slate-800 rounded-xl overflow-hidden shadow-md flex flex-col justify-between hover:shadow-xl transition group">
+                    <div class="relative p-4 bg-slate-50 flex items-center justify-center h-48">
+                        <span class="absolute top-2.5 left-2.5 bg-red-600 text-white text-[11px] font-black px-2 py-0.5 rounded-md">-20%</span>
+                        <img src="images/lenovo-legion-pro-5.jpg" alt="Lenovo Legion Pro 5" class="max-h-40 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[11px] font-semibold text-blue-600 uppercase">Gaming Chuyên Nghiệp</div>
+                            <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                                <a href="san-pham-chi-tiet.html">Laptop Lenovo Legion Pro 5 16IRX9 i7 14650HX / 32GB / 1TB RTX 4060</a>
+                            </h4>
+                            <div class="flex items-center gap-2 mt-2 text-xs text-slate-500">
+                                <span><i class="fa-solid fa-microchip text-slate-400"></i> i7 Gen 14</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-gamepad text-slate-400"></i> RTX 4060</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100">
+                            <div class="text-red-600 font-extrabold text-lg">36.990.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">45.990.000₫</div>
+                            <div class="mt-3 flex gap-2">
+                                <a href="san-pham-chi-tiet.html" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg text-xs font-semibold transition">
+                                    Xem chi tiết
+                                </a>
+                                <button onclick="addToCart('Lenovo Legion Pro 5', 36990000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center transition">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT SECTION: VĂN PHÒNG & MỎNG NHẸ -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-7 bg-blue-600 rounded-full"></span>
+                    <h2 class="text-xl font-bold text-slate-900">Laptop Văn Phòng & Mỏng Nhẹ</h2>
+                </div>
+                <a href="san-pham.html" class="text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition">
+                    Xem tất cả (48) <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Laptop 1 -->
+                <div class="bg-white rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition p-4 flex flex-col justify-between group">
+                    <div class="h-44 flex items-center justify-center mb-3">
+                        <img src="images/dell-xps-13.jpg" alt="Dell XPS 13" class="max-h-36 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-semibold text-blue-600 uppercase">Ultrabook Cao Cấp</div>
+                        <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                            <a href="san-pham-chi-tiet.html">Laptop Dell XPS 13 Plus 9320 i7 1360P / 16GB / 512GB SSD / Màn 3.5K OLED</a>
+                        </h4>
+                        <div class="mt-2 flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-1">(24 đánh giá)</span>
+                        </div>
+                        <div class="mt-3">
+                            <div class="text-blue-600 font-extrabold text-lg">38.900.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">42.500.000₫</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex gap-2">
+                        <a href="san-pham-chi-tiet.html" class="flex-1 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 text-center py-2 rounded-lg text-xs font-semibold transition">
+                            Chi tiết
+                        </a>
+                        <button onclick="addToCart('Dell XPS 13 Plus', 38900000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 rounded-lg flex items-center justify-center transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Laptop 2 -->
+                <div class="bg-white rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition p-4 flex flex-col justify-between group">
+                    <div class="h-44 flex items-center justify-center mb-3">
+                        <img src="images/asus-zenbook-14.jpg" alt="Asus Zenbook 14" class="max-h-36 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-semibold text-blue-600 uppercase">Màn OLED Đỉnh Cao</div>
+                        <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                            <a href="san-pham-chi-tiet.html">Laptop Asus Zenbook 14 OLED UX3405MA Intel Core Ultra 7 155H / 32GB / 1TB</a>
+                        </h4>
+                        <div class="mt-2 flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="text-slate-400 text-[11px] ml-1">(18 đánh giá)</span>
+                        </div>
+                        <div class="mt-3">
+                            <div class="text-blue-600 font-extrabold text-lg">29.490.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">32.990.000₫</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex gap-2">
+                        <a href="san-pham-chi-tiet.html" class="flex-1 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 text-center py-2 rounded-lg text-xs font-semibold transition">
+                            Chi tiết
+                        </a>
+                        <button onclick="addToCart('Asus Zenbook 14', 29490000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 rounded-lg flex items-center justify-center transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Laptop 3 -->
+                <div class="bg-white rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition p-4 flex flex-col justify-between group">
+                    <div class="h-44 flex items-center justify-center mb-3">
+                        <img src="images/lenovo-thinkpad-x1-main.jpg" alt="Lenovo Thinkpad X1" class="max-h-36 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-semibold text-blue-600 uppercase">Doanh Nhân Bền Bỉ</div>
+                        <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                            <a href="san-pham-chi-tiet.html">Laptop Lenovo ThinkPad X1 Carbon Gen 11 i7 1355U / 16GB / 512GB / Bàn Phím Đỉnh</a>
+                        </h4>
+                        <div class="mt-2 flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-1">(32 đánh giá)</span>
+                        </div>
+                        <div class="mt-3">
+                            <div class="text-blue-600 font-extrabold text-lg">35.900.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">41.000.000₫</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex gap-2">
+                        <a href="san-pham-chi-tiet.html" class="flex-1 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 text-center py-2 rounded-lg text-xs font-semibold transition">
+                            Chi tiết
+                        </a>
+                        <button onclick="addToCart('Lenovo ThinkPad X1 Carbon', 35900000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 rounded-lg flex items-center justify-center transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Laptop 4 -->
+                <div class="bg-white rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition p-4 flex flex-col justify-between group">
+                    <div class="h-44 flex items-center justify-center mb-3">
+                        <img src="images/hp-spectre-x360.jpg" alt="HP Spectre x360" class="max-h-36 object-contain group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div>
+                        <div class="text-[11px] font-semibold text-blue-600 uppercase">Xoay Gập 360 Độ</div>
+                        <h4 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1 hover:text-blue-600">
+                            <a href="san-pham-chi-tiet.html">Laptop HP Spectre x360 14-eu0051TU Core Ultra 7 155H / 32GB / 1TB OLED Cảm ứng</a>
+                        </h4>
+                        <div class="mt-2 flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-slate-400 text-[11px] ml-1">(15 đánh giá)</span>
+                        </div>
+                        <div class="mt-3">
+                            <div class="text-blue-600 font-extrabold text-lg">39.990.000₫</div>
+                            <div class="text-xs text-slate-400 line-through">45.000.000₫</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex gap-2">
+                        <a href="san-pham-chi-tiet.html" class="flex-1 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 text-center py-2 rounded-lg text-xs font-semibold transition">
+                            Chi tiết
+                        </a>
+                        <button onclick="addToCart('HP Spectre x360', 39990000)" class="w-9 h-9 bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 rounded-lg flex items-center justify-center transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="grid grid-cols-1 md:grid-cols-4 gap-4 py-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl flex-shrink-0">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sm text-slate-900">Giao Hàng Siêu Tốc</h5>
+                    <p class="text-xs text-slate-500 mt-0.5">Nhận hàng trong 2h tại TP.HCM & Hà Nội</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center text-2xl flex-shrink-0">
+                    <i class="fa-solid fa-shield-check"></i>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sm text-slate-900">Bảo Hành Chính Hãng</h5>
+                    <p class="text-xs text-slate-500 mt-0.5">Lỗi 1 đổi 1 trong 30 ngày đầu tiên</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl flex-shrink-0">
+                    <i class="fa-solid fa-credit-card"></i>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sm text-slate-900">Trả Góp 0% Lãi Suất</h5>
+                    <p class="text-xs text-slate-500 mt-0.5">Thủ tục nhanh chóng qua thẻ tín dụng / CCCD</p>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl flex-shrink-0">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sm text-slate-900">Hỗ Trợ Kỹ Thuật 24/7</h5>
+                    <p class="text-xs text-slate-500 mt-0.5">Cài đặt phần mềm trọn đời máy miễn phí</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-sm mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Col 1 -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white text-lg font-bold">KT</div>
+                        <span class="text-xl font-black text-white">KTSHOP LAPTOP</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Hệ thống bán lẻ laptop chính hãng hàng đầu Việt Nam. Cam kết giá tốt nhất, chất lượng dịch vụ và bảo hành uy tín hàng đầu.
+                    </p>
+                    <div class="text-xs space-y-2">
+                        <p><i class="fa-solid fa-location-dot text-blue-400 mr-2"></i> 123 Đường 3/2, Quận 10, TP. Hồ Chí Minh</p>
+                        <p><i class="fa-solid fa-phone text-blue-400 mr-2"></i> 1800 6868 - 0988.123.456</p>
+                        <p><i class="fa-solid fa-envelope text-blue-400 mr-2"></i> support@ktshop.vn</p>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Về KTSHOP</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="gioi-thieu.html" class="hover:text-blue-400 transition">Giới thiệu công ty</a></li>
+                        <li><a href="lien-he.html" class="hover:text-blue-400 transition">Hệ thống cửa hàng</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-blue-400 transition">Chính sách bảo mật</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-blue-400 transition">Tuyển dụng mới nhất</a></li>
+                        <li><a href="admin/index.html" class="text-yellow-400 hover:underline"><i class="fa-solid fa-lock text-[10px] mr-1"></i> Quản trị viên (Admin)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Chính Sách & Hỗ Trợ</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-blue-400 transition">Chính sách đổi trả 30 ngày</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Chính sách bảo hành chính hãng</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Chính sách giao hàng tận nơi</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Hướng dẫn mua trả góp 0%</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Cài đặt phần mềm miễn phí</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Đăng Ký Nhận Khuyến Mãi</h4>
+                    <p class="text-xs text-slate-400 mb-3">Nhận ngay voucher 500.000₫ cho đơn hàng laptop đầu tiên:</p>
+                    <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký nhận tin ưu đãi!');" class="flex gap-2">
+                        <input type="email" placeholder="Email của bạn..." required class="bg-slate-800 border border-slate-700 px-3 py-2 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500 flex-1">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 rounded-lg text-xs font-bold transition">Gửi</button>
+                    </form>
+                    <div class="flex gap-3 mt-5">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-blue-600 text-white flex items-center justify-center transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-red-600 text-white flex items-center justify-center transition"><i class="fa-brands fa-youtube text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-sky-500 text-white flex items-center justify-center transition"><i class="fa-brands fa-tiktok text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <div>© 2026 KTSHOP Laptop. Dự án chuyên đề Frontend - Huỳnh Tấn Phát (501250508).</div>
+                <div class="flex gap-4">
+                    <span>Thanh toán tiện lợi qua:</span>
+                    <i class="fa-brands fa-cc-visa text-base text-slate-400"></i>
+                    <i class="fa-brands fa-cc-mastercard text-base text-slate-400"></i>
+                    <i class="fa-solid fa-qrcode text-base text-slate-400"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Banner Slider Script & Cart Notification -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+
+        function showSlide(index) {
+            slides.forEach((s, i) => {
+                s.classList.toggle('active', i === index);
+            });
+        }
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        // Auto slide
+        setInterval(nextSlide, 5000);
+
+        // Simple Cart Notification
+        function addToCart(name, price) {
+            alert(` Đã thêm "${name}" vào giỏ hàng thành công!\nGiá: ${price.toLocaleString('vi-VN')}₫`);
+        }
+    </script>
+</body>
+</html>

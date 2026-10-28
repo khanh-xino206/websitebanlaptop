@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node misc/seed_diverse_products.js",
+    "migrate": "node misc/migrate.js",
+    "migrate:features": "node misc/migrate_features.js",
+    "migrate:news": "node misc/migrate_news.js",
+    "generate:data": "node misc/generate_data.js",
+    "test:api": "node misc/test_all_fixes.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mssql": "^12.7.2",
+    "multer": "^2.4.0",
+    "mysql2": "^3.24.4",
+    "nodemailer": "^10.0.13",
+    "nodemon": "^3.1.14",
+    "pptxgenjs": "^4.0.1"
+  }
+}
